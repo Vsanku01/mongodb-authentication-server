@@ -21,7 +21,7 @@ app.use('/api', AuthRoute);
 
 //Index page (static HTML)
 app.route('/').get(function (req, res) {
-  res.sendFile(process.cwd() + '/index.html');
+  res.send('Express-MongoDB-Authentication');
 });
 
 // Establish the connection to the database
