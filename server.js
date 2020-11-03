@@ -6,6 +6,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const compression = require('compression');
 const path = require('path');
+const coolFaces = require('cool-ascii-faces');
 
 // Routes
 const AuthRoute = require('./routes/auth');
@@ -22,8 +23,12 @@ app.use('/', AuthRoute);
 
 //Index page (static HTML)
 //Index page at default entry route
-app.route('/').get(function (req, res) {
-  res.sendFile(path.join(__dirname, '/index.html'));
+// app.route('/').get(function (req, res) {
+//   res.sendFile(path.join(__dirname, '/index.html'));
+// });
+
+app.get('/', (req, res) => {
+  res.send(coolFaces());
 });
 
 // Establish the connection to the database
