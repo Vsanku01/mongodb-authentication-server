@@ -20,8 +20,9 @@ app.use(bodyParser.json());
 app.use('/', AuthRoute);
 
 //Index page (static HTML)
+//Index page at default entry route
 app.route('/').get(function (req, res) {
-  res.send('Express-MongoDB-Authentication');
+  res.sendFile(process.cwd() + '/index.html');
 });
 
 // Establish the connection to the database
