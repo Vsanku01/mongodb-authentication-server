@@ -17,7 +17,7 @@ app.use(cors());
 // Middlewares
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use('/api', AuthRoute);
+app.use('/', AuthRoute);
 
 //Index page (static HTML)
 app.route('/').get(function (req, res) {
