@@ -5,6 +5,7 @@ require('dotenv').config();
 const cors = require('cors');
 const helmet = require('helmet');
 const compression = require('compression');
+const path = require('path');
 
 // Routes
 const AuthRoute = require('./routes/auth');
@@ -22,7 +23,7 @@ app.use('/', AuthRoute);
 //Index page (static HTML)
 //Index page at default entry route
 app.route('/').get(function (req, res) {
-  res.sendFile(process.cwd() + '/index.html');
+  res.sendFile(path.join(__dirname, '/index.html'));
 });
 
 // Establish the connection to the database
