@@ -28,7 +28,7 @@ app.use('/', AuthRoute);
 // });
 
 app.get('/', (req, res) => {
-  res.send(coolFaces());
+  res.sendFile(path.join(__dirname, '/index.html'));
 });
 
 // Establish the connection to the database
