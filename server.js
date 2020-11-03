@@ -18,7 +18,8 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use('/api', AuthRoute);
-// Static path
+
+//Index page (static HTML)
 app.route('/').get(function (req, res) {
   res.sendFile(process.cwd() + '/index.html');
 });
